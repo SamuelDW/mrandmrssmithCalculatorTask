@@ -1,0 +1,60 @@
+{% extends'base.html.twig' %}
+
+<div class="calculator-form">
+    {{ form_start(form) }}
+    <div class="form-errors">
+        {{ form_errors() }}
+    </div>
+
+    <div class="form-input-group">
+        <div class="form-input-label">
+            {{ form_label(form.inputValueOne) }}
+        </div>
+        <div class="form-input-field">
+            {{ form_widget(form.inputValueOne) }}
+        </div>
+    </div>
+
+    <div class="form-input-group">
+        <div class="form-input-label">
+            {{ form_label(form.inputValueTwo) }}
+        </div>
+        <div class="form-input-field">
+            {{ form_widget(form.inputValueTwo) }}
+        </div>
+    </div>
+
+    <div class="form-input-group">
+        <div class="form-input-label">
+            {{ form_label(form.operators) }}
+        </div>
+        <div class="form-input-field">
+            {{ form_widget(form.operators) }}
+        </div>
+    </div>
+
+    <div class="form-submit-group">
+        <input type="submit" value="Calculate" class="form-submit">
+    </div>
+    {{ form_end(form) }}
+</div>
+
+
+<div class="calculator-results">
+
+    {% if originalEquation is defined and is not null %}
+        <div class="original-equation">
+            {{ originalEquation }}
+        </div>
+
+        <div class="equation-with-values">
+            {{ equationWithValues }}
+        </div>
+    {% endif %}
+
+    <div class="answer">
+
+    </div>
+
+</div>
+
